@@ -1,0 +1,40 @@
+using System;
+
+namespace Practich_4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Числа: ");
+            for (int i = 100; i < 999; i++)
+            {
+                if (numbers(i) == i)
+                {
+                    Console.Write(i + " ");
+                }
+            }
+            Console.Write("удовлетворяют условию.");
+            Console.ReadLine();
+
+        }
+        public static int numbers(int value)
+        {
+            int a, b, c;
+            a = value / 100;
+            b = (value / 10) % 10;
+            c = value % 10;
+            int num = fact(a) + fact(b) + fact(c);
+            return num;
+        }
+        public static int fact(int x)
+        {
+            int fac = 1;
+            for (int i = 1; i <= x; i++)
+            {
+                fac *= i;
+            }
+            return fac;
+        }
+    }
+}
